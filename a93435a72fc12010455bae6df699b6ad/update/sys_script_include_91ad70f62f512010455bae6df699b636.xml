@@ -11,7 +11,7 @@
 	var provider = new sn_cc.StandardCredentialsProvider();
 	var credentials = provider.getCredentialByID("7ad31d762f912010455bae6df699b6b9");
 	gs.info("User name: " + credentials.getAttribute("user_name"));
-	gs.info("pw: " + credentials.getAttribute("password"));
+// 	gs.info("pw: " + credentials.getAttribute("password"));
 	
 	var clientId = credentials.getAttribute("user_name");
 	var password = credentials.getAttribute("password");
@@ -48,13 +48,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-12-29 00:15:02</sys_created_on>
         <sys_id>91ad70f62f512010455bae6df699b636</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>getToken</sys_name>
         <sys_package display_value="SecureAccess" source="x_536555_secureacc">a93435a72fc12010455bae6df699b6ad</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="SecureAccess">a93435a72fc12010455bae6df699b6ad</sys_scope>
         <sys_update_name>sys_script_include_91ad70f62f512010455bae6df699b636</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-12-29 02:16:25</sys_updated_on>
+        <sys_updated_by>oluetkeh</sys_updated_by>
+        <sys_updated_on>2020-12-29 16:55:33</sys_updated_on>
     </sys_script_include>
 </record_update>

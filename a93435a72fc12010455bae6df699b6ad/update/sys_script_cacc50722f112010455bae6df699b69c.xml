@@ -18,7 +18,7 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>SecureAccess Debug Helper</name>
+        <name>CreateAndShareEndpoint</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -30,13 +30,19 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	var x = "short";
 	var acccessToken = getToken();
+	var epId;
+	var networkId = '7c57fdae-104a-4026-8d2d-1c69524895e7'
 	if (accessToken) {
-		gs.info('Cognito Access Token for ' + current.u_requested_for.name + ' retrieved.');
-		var epName = current.u_requested_for.last_name + "." + current.u_requested_for.first_name + "." + current.u_which_appwan
-		createEndpoint(accessToken, epName, current.u_which_appwan);
-	}
-	else {
-		gs.info('Failed to get Cognito Access Token for ' + current.u_requested_for.name);
+		var epName = current.u_requested_for.last_name + "." + current.u_requested_for.first_name + "." + current.u_which_appwan;
+		epId = createEndpoint(accessToken, networkId, epName, current.u_which_appwan);
+		if (epId) {
+			gs.info("created endpoint: "+ epName + " with ID: "+ epId);
+			shareEndpointViaEmail(accessToken, epName, epId, current.u_requested_for.email);
+		} else {
+			gs.error("endpoint creation failed: "+ epName);
+		}
+	} else {
+		gs.error('Failed to get Cognito Access Token for secure access request for ' + current.u_requested_for.name);
 	}
 			
 })(current, previous);]]></script>
@@ -46,15 +52,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cacc50722f112010455bae6df699b69c</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_name>SecureAccess Debug Helper</sys_name>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>CreateAndShareEndpoint</sys_name>
         <sys_overrides/>
         <sys_package display_value="SecureAccess" source="x_536555_secureacc">a93435a72fc12010455bae6df699b6ad</sys_package>
         <sys_policy/>
         <sys_scope display_value="SecureAccess">a93435a72fc12010455bae6df699b6ad</sys_scope>
         <sys_update_name>sys_script_cacc50722f112010455bae6df699b69c</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-12-29 01:32:22</sys_updated_on>
+        <sys_updated_by>oluetkeh</sys_updated_by>
+        <sys_updated_on>2020-12-29 23:24:56</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

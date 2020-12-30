@@ -2,25 +2,24 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_536555_secureacc.createEndpoint</api_name>
+        <api_name>x_536555_secureacc.shareEndpointViaEmail</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
-        <description>create and endpoint named: &lt;last&gt;.&lt;first&gt;.&lt;appwan&gt;</description>
-        <name>createEndpoint</name>
-        <script><![CDATA[function createEndpoint(accessToken, networkId, epName, appWan){
-	gs.info('Creating Endpoint: ' + epName + ' with access to: ' + appWan);
-	var endpointUrl = "https://gateway.production.netfoundry.io/core/v2/endpoints";
-	var requestBody = '{"selected":false,"enrollmentMethod":{"ott":"true","ottca":null},"networkId":"'+networkId+'","attributes":["#'+appWan+'"],"name":"'+epName+'"}';
+        <description>share endpoint data via e-mail</description>
+        <name>shareEndpointViaEmail</name>
+        <script><![CDATA[function shareEndpointViaEmail(accessToken, epName, epId, email){
+	gs.info('Sharing Endpoint: ' + epName + ' via e-mail to: ' + email);
+	var shareUrl = "https://gateway.production.netfoundry.io/core/v2/endpoints/share";	
+	var requestBody = '[{"toList":["'+email+'"],"subject":"NetFoundry - Registration Information","id":"'+epId+'"}]' ;
 	gs.info("requestBody: " + requestBody);
 	var responseBody;
 	var response;
 	var status;
 	var sm;
-	var endpointId;
 	
 	try {
 		sm = new sn_ws.RESTMessageV2();
-		sm.setEndpoint(endpointUrl);
+		sm.setEndpoint(shareUrl);
 		sm.setRequestHeader("Authorization", "Bearer " + accessToken);
 		sm.setRequestHeader("content-type", "application/json");
 		sm.setHttpMethod("POST");
@@ -29,10 +28,9 @@
 		responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
 		status = response.getStatusCode();
 		gs.info("status: " + status);
-		if (status === 200) {
+		if (status === 202) {
 			var obj = JSON.parse(responseBody);
-			gs.info("created endpoint: " + obj.name);
-			endpointId = obj.id;
+			gs.info("share endpoint: " + epName + " result: " + responseBody);
 		}
 	} catch(ex) {
 		responseBody = ex.getMessage();
@@ -41,19 +39,18 @@
 	} finally {
 		requestBody = sm ? sm.getRequestBody():null;
 	}
-	return endpointId;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2020-12-29 01:34:37</sys_created_on>
-        <sys_id>162059722f912010455bae6df699b606</sys_id>
-        <sys_mod_count>10</sys_mod_count>
-        <sys_name>createEndpoint</sys_name>
+        <sys_created_by>oluetkeh</sys_created_by>
+        <sys_created_on>2020-12-29 22:15:57</sys_created_on>
+        <sys_id>935c2d472f5d2010455bae6df699b6b2</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>shareEndpointViaEmail</sys_name>
         <sys_package display_value="SecureAccess" source="x_536555_secureacc">a93435a72fc12010455bae6df699b6ad</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="SecureAccess">a93435a72fc12010455bae6df699b6ad</sys_scope>
-        <sys_update_name>sys_script_include_162059722f912010455bae6df699b606</sys_update_name>
+        <sys_update_name>sys_script_include_935c2d472f5d2010455bae6df699b6b2</sys_update_name>
         <sys_updated_by>oluetkeh</sys_updated_by>
-        <sys_updated_on>2020-12-29 23:25:38</sys_updated_on>
+        <sys_updated_on>2020-12-29 23:21:35</sys_updated_on>
     </sys_script_include>
 </record_update>

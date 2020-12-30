@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" extends="task" label="SecureAccess" max_length="40" name="x_536555_secureacc_secureaccess" sizeclass="3" type="collection">
+    <element audit="true" extends="task" label="SecureAccess" max_length="40" name="x_536555_secureacc_secureaccess" sizeclass="1" type="collection">
         <element attributes="encode_utf8=false" label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
-        <element attributes="edge_encryption_enabled=true" choice="3" default="appwan1" label="Which AppWAN" max_length="40" name="u_which_appwan" type="string">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Which AppWAN" mandatory="true" max_length="40" name="u_which_appwan" type="string">
             <choice>
-                <element inactive_on_update="false" label="AppWAN 1" sequence="0" value="appwan 1"/>
-                <element inactive_on_update="false" label="AppWAN 2" sequence="1" value="appwan 2"/>
-                <element inactive_on_update="false" label="AppWAN 3" sequence="2" value="appwan 3"/>
+                <element inactive="true" inactive_on_update="true" label="AppWAN 1" sequence="0" value="appwan 1"/>
+                <element inactive="true" inactive_on_update="true" label="HR" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Marketing" sequence="0" value="marketing"/>
+                <element inactive="true" inactive_on_update="true" label="AppWAN 2" sequence="1" value="appwan 2"/>
+                <element inactive_on_update="false" label="Sales" sequence="1" value="sales"/>
+                <element inactive="true" inactive_on_update="true" label="AppWAN 3" sequence="2" value="appwan 3"/>
+                <element inactive_on_update="false" label="Product" sequence="2" value="product"/>
             </choice>
         </element>
     </element>

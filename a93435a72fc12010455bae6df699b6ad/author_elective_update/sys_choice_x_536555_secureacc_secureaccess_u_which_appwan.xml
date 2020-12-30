@@ -20,7 +20,7 @@
             <dependent_value/>
             <element>u_which_appwan</element>
             <hint/>
-            <inactive>false</inactive>
+            <inactive>true</inactive>
             <label>AppWAN 1</label>
             <language>en</language>
             <name>x_536555_secureacc_secureaccess</name>
@@ -30,16 +30,54 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>af3f97d02f512010455bae6df699b6dc</sys_id>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>1</sys_mod_count>
             <sys_updated_by>oluetkeh</sys_updated_by>
-            <sys_updated_on>2020-12-21 17:33:05</sys_updated_on>
+            <sys_updated_on>2020-12-29 22:28:17</sys_updated_on>
             <value>appwan 1</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>
             <element>u_which_appwan</element>
             <hint/>
+            <inactive>true</inactive>
+            <label>HR</label>
+            <language>en</language>
+            <name>x_536555_secureacc_secureaccess</name>
+            <sequence>0</sequence>
+            <sys_created_by>oluetkeh</sys_created_by>
+            <sys_created_on>2020-12-29 22:28:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>698f254b2f5d2010455bae6df699b646</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>oluetkeh</sys_updated_by>
+            <sys_updated_on>2020-12-29 23:47:24</sys_updated_on>
+            <value>hr</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_which_appwan</element>
+            <hint/>
             <inactive>false</inactive>
+            <label>Marketing</label>
+            <language>en</language>
+            <name>x_536555_secureacc_secureaccess</name>
+            <sequence>0</sequence>
+            <sys_created_by>oluetkeh</sys_created_by>
+            <sys_created_on>2020-12-29 22:28:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ad8f254b2f5d2010455bae6df699b641</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>oluetkeh</sys_updated_by>
+            <sys_updated_on>2020-12-29 22:28:17</sys_updated_on>
+            <value>marketing</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_which_appwan</element>
+            <hint/>
+            <inactive>true</inactive>
             <label>AppWAN 2</label>
             <language>en</language>
             <name>x_536555_secureacc_secureaccess</name>
@@ -49,9 +87,9 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>633f97d02f512010455bae6df699b6e0</sys_id>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>1</sys_mod_count>
             <sys_updated_by>oluetkeh</sys_updated_by>
-            <sys_updated_on>2020-12-21 17:33:05</sys_updated_on>
+            <sys_updated_on>2020-12-29 22:28:17</sys_updated_on>
             <value>appwan 2</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -59,6 +97,25 @@
             <element>u_which_appwan</element>
             <hint/>
             <inactive>false</inactive>
+            <label>Sales</label>
+            <language>en</language>
+            <name>x_536555_secureacc_secureaccess</name>
+            <sequence>1</sequence>
+            <sys_created_by>oluetkeh</sys_created_by>
+            <sys_created_on>2020-12-29 22:28:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a98f254b2f5d2010455bae6df699b644</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>oluetkeh</sys_updated_by>
+            <sys_updated_on>2020-12-29 22:28:17</sys_updated_on>
+            <value>sales</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_which_appwan</element>
+            <hint/>
+            <inactive>true</inactive>
             <label>AppWAN 3</label>
             <language>en</language>
             <name>x_536555_secureacc_secureaccess</name>
@@ -68,10 +125,29 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>233f97d02f512010455bae6df699b6e2</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>oluetkeh</sys_updated_by>
+            <sys_updated_on>2020-12-29 22:28:17</sys_updated_on>
+            <value>appwan 3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_which_appwan</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Product</label>
+            <language>en</language>
+            <name>x_536555_secureacc_secureaccess</name>
+            <sequence>2</sequence>
+            <sys_created_by>oluetkeh</sys_created_by>
+            <sys_created_on>2020-12-29 23:47:24</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>60a14a472f9d2010455bae6df699b62f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>oluetkeh</sys_updated_by>
-            <sys_updated_on>2020-12-21 17:33:05</sys_updated_on>
-            <value>appwan 3</value>
+            <sys_updated_on>2020-12-29 23:47:24</sys_updated_on>
+            <value>product</value>
         </sys_choice>
     </sys_choice>
 </record_update>
