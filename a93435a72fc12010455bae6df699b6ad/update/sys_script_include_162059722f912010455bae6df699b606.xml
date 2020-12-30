@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_536555_secureacc.createEndpoint</api_name>
         <caller_access/>
@@ -37,7 +37,7 @@
 	} catch(ex) {
 		responseBody = ex.getMessage();
 		status = '500';
-		gs.info("exception: " + responseBody);
+		gs.error("exception: " + responseBody);
 	} finally {
 		requestBody = sm ? sm.getRequestBody():null;
 	}
@@ -47,13 +47,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-12-29 01:34:37</sys_created_on>
         <sys_id>162059722f912010455bae6df699b606</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>createEndpoint</sys_name>
         <sys_package display_value="SecureAccess" source="x_536555_secureacc">a93435a72fc12010455bae6df699b6ad</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="SecureAccess">a93435a72fc12010455bae6df699b6ad</sys_scope>
         <sys_update_name>sys_script_include_162059722f912010455bae6df699b606</sys_update_name>
         <sys_updated_by>oluetkeh</sys_updated_by>
-        <sys_updated_on>2020-12-29 23:25:38</sys_updated_on>
+        <sys_updated_on>2020-12-30 21:26:06</sys_updated_on>
     </sys_script_include>
 </record_update>
