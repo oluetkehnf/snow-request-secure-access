@@ -27,15 +27,16 @@
 		response = sm.execute();
 		responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
 		status = response.getStatusCode();
-		gs.info("status: " + status);
+		gs.info("status returned from shareEndpoint request: " + status);
 		if (status === 202) {
 			var obj = JSON.parse(responseBody);
 			gs.info("share endpoint: " + epName + " result: " + responseBody);
+		} else {
+			gs.error(responseBody);
 		}
 	} catch(ex) {
 		responseBody = ex.getMessage();
-		status = '500';
-		gs.info("exception: " + responseBody);
+		gs.error("exception: " + responseBody);
 	} finally {
 		requestBody = sm ? sm.getRequestBody():null;
 	}
@@ -44,13 +45,13 @@
         <sys_created_by>oluetkeh</sys_created_by>
         <sys_created_on>2020-12-29 22:15:57</sys_created_on>
         <sys_id>935c2d472f5d2010455bae6df699b6b2</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>shareEndpointViaEmail</sys_name>
         <sys_package display_value="SecureAccess" source="x_536555_secureacc">a93435a72fc12010455bae6df699b6ad</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="SecureAccess">a93435a72fc12010455bae6df699b6ad</sys_scope>
         <sys_update_name>sys_script_include_935c2d472f5d2010455bae6df699b6b2</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-12-30 19:44:29</sys_updated_on>
+        <sys_updated_by>oluetkeh</sys_updated_by>
+        <sys_updated_on>2020-12-30 21:35:20</sys_updated_on>
     </sys_script_include>
 </record_update>
